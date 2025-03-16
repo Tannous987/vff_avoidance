@@ -15,10 +15,60 @@ First, create a ROS 2 workspace and a `src` folder inside it:
 ```bash
 mkdir -p ~/vff_ws/src
 cd ~/vff_ws/sr
-'''
+```
 
 ### 2. Clone the Repository
 Clone the GitHub repository containing the VFF avoidance code:
 ```bash
 git clone https://github.com/Tannous987/vff_avoidance.git
-'''
+```
+### 3. Build the Workspace
+Navigate back to the workspace root and build the package:
+```bash
+cd ~/vff_ws
+colcon build
+```
+
+### 4. Source the Workspace
+Source the workspace to make the package available:
+```bash
+source install/setup.bash
+```
+### 5. Launch the Avoidance Node
+Launch the VFF avoidance node:
+```bash
+ros2 launch vff_avoidance avoidance_vff.launch.py
+```
+### 6. Run Rviz2
+Open Rviz2 to visualize the robot's behavior and the debugging markers:
+```bash
+rviz2
+```
+
+### 7. Test the Algorithm
+Publish a sample LaserScan message to test the obstacle avoidance behavior:
+```bash
+ros2 topic pub /scan sensor_msgs/msg/LaserScan "{
+  header: {stamp: {sec: 0, nanosec: 0}, frame_id: 'base_link'},
+  angle_min: -1.57,
+  angle_max: 1.57,
+  angle_increment: 0.0175,
+  time_increment: 0.0,
+  scan_time: 0.1,
+  range_min: 0.1,
+  range_max: 10.0,
+  ranges: [10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0,
+           10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0,
+           10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0,
+           10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0,
+           10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0,
+           10.0, 10.0, 10.0, 10.0,10.0, 10.0, 10.0, 10.0, 10.0, 10.0,
+           10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0,
+           10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0,
+           10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0,
+           10.0, 10.0, 10.0, 10.0, 10.0,
+           10.0, 10.0, 10.0, 10.0, 10.0, 0.8, 10.0, 10.0, 10.0, 10.0,
+           10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0],
+  intensities: []
+}" --once
+```
