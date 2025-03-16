@@ -1,0 +1,10 @@
+avoidance_node:
+  ros__parameters:
+    laser_topic: "scan"
+    cmd_vel_topic: "cmd_vel"
+    marker_topic: "visualization_marker_array"
+    max_linear_speed: 0.5
+    max_angular_speed: 1.5
+    obstacle_threshold: 1.0
+    attractive_gain: 0.5
+    repulsive_gain: 0.2
