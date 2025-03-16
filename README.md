@@ -72,3 +72,17 @@ ros2 topic pub /scan sensor_msgs/msg/LaserScan "{
   intensities: []
 }" --once
 ```
+### 8. Gazebo Simulation
+To simulate the robot in Gazebo, follow these steps:
+
+1. **Set the TurtleBot3 Model**:
+   Before running the simulation, set the TurtleBot3 model (e.g., `burger`, `waffle`, or `waffle_pi`). For example:
+   ```bash
+   export TURTLEBOT3_MODEL=burger
+   ```
+2. **Launch Gazebo with TurtleBot3:**:
+   Run the following command to launch Gazebo with the TurtleBot3 simulation:
+   ```bash
+   ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
+   ```
+
