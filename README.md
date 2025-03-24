@@ -12,13 +12,6 @@ This project implements the Virtual Force Field (VFF) algorithm to enable a Turt
 First, create a ROS 2 workspace and a `src` folder inside it:
 ```bash
 mkdir -p ~/vff_ws/src
-cd ~/vff_ws/sr
-```## Setup Instructions
-
-### 1. Create Workspace and Source Folder
-First, create a ROS 2 workspace and a `src` folder inside it:
-```bash
-mkdir -p ~/vff_ws/src
 cd ~/vff_ws/src
 ```
 
