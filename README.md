@@ -27,14 +27,10 @@ cd ~/vff_ws
 colcon build
 ```
 
-### 4. Source the Workspace
-Source the workspace to make the package available:
-```bash
-source install/setup.bash
-```
-### 5. Launch the Avoidance Node
+### 4. Launch the Avoidance Node
 Launch the VFF avoidance node:
 ```bash
+cd ~/vff_ws/src
 ros2 launch vff_avoidance avoidance_vff.launch.py
 ```
 ### 6. Run Rviz2
