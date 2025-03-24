@@ -19,25 +19,7 @@ cd ~/vff_ws/sr
 First, create a ROS 2 workspace and a `src` folder inside it:
 ```bash
 mkdir -p ~/vff_ws/src
-cd ~/vff_ws/sr
-```
-
-### 2. Clone the Repository
-Clone the GitHub repository containing the VFF avoidance code:
-```bash
-git clone https://github.com/Tannous987/vff_avoidance.git
-```
-### 3. Build the Workspace
-Navigate back to the workspace root and build the package:
-```bash
-cd ~/vff_ws
-colcon build
-```
-
-### 4. Source the Workspace
-Source the workspace to make the package available:
-```bash
-source install/setup.bash
+cd ~/vff_ws/src
 ```
 
 ### 2. Clone the Repository
