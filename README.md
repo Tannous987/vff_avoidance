@@ -30,7 +30,8 @@ colcon build
 ### 4. Launch the Avoidance Node
 Launch the VFF avoidance node:
 ```bash
-cd ~/vff_ws/src
+echo "source ~/vff_ws/install/setup.bash" >> ~/.bashrc
+source ~/.bashrc
 ros2 launch vff_avoidance avoidance_vff.launch.py
 ```
 ### 6. Run Rviz2
